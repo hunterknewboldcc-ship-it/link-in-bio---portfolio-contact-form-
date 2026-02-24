@@ -1,83 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Hunter Newbold - Web Designer at Contentia Creative">
-    <title>Hunter | Contentia Creative</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .link-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .link-btn:hover { transform: scale(1.04) translateY(-2px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3); }
-        .avatar-ring { box-shadow: 0 0 0 6px rgba(45, 212, 191, 0.3); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunter Newbold | Web Designer</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white dark:bg-gradient-to-b dark:from-zinc-950 dark:to-black text-zinc-900 dark:text-white min-h-screen flex items-center justify-center p-4 sm:p-6">
-    <div class="max-w-[380px] w-full mx-auto text-center">
-        <div class="mb-10">
-            <div class="relative mx-auto mb-6 inline-block">
-                <img id="avatar" src="https://i.imgur.com/g5DtDK7.jpg" alt="Hunter Newbold" class="w-40 h-40 rounded-3xl object-cover avatar-ring">
-            </div>
-            <h1 id="name" class="text-4xl font-semibold tracking-tighter">Hunter Newbold</h1>
-            <p id="bio" class="mt-2 text-zinc-500 dark:text-zinc-400 text-[17px] leading-tight">Web Designer at Contentia Creative</p>
-        </div>
-        
-        <div id="links" class="space-y-3"></div>
+<body class="bg-zinc-950 text-zinc-100">
+<header class="p-6 flex justify-between items-center border-b border-zinc-800">
+  <div class="flex items-center gap-3"><h1 class="text-2xl font-bold">Hunter Newbold</h1><span class="text-emerald-400">Contentia Creative</span></div>
+  <nav class="flex gap-8 text-sm">
+    <a href="index.html" class="hover:text-emerald-400">Home</a>
+    <a href="portfolio.html" class="hover:text-emerald-400">Portfolio</a>
+    <a href="contact.html" class="hover:text-emerald-400">Contact</a>
+  </nav>
+  <a href="https://x.com/HunterNewboldCC" target="_blank" class="text-3xl">𝕏</a>
+</header>
 
-        <div class="mt-12 flex justify-center gap-8 text-3xl">
-            <button onclick="toggleTheme()" id="theme-btn" class="hover:scale-110 transition">🌙</button>
-            <a href="https://x.com/HunterNewboldCC" target="_blank" class="hover:scale-110 transition">𝕏</a>
-        </div>
-    </div>
+<section class="min-h-screen flex items-center justify-center text-center px-6">
+  <div><h2 class="text-7xl font-bold">Web Designer</h2><p class="mt-4 text-2xl text-zinc-400">High-converting sites that win clients</p>
+  <div class="mt-12 flex gap-6 justify-center"><a href="portfolio.html" class="px-10 py-4 bg-white text-black font-semibold rounded-3xl">View Work</a><a href="contact.html" class="px-10 py-4 border border-white rounded-3xl">Hire Me</a></div></div>
+</section>
 
-    <script>
-        tailwind.config = { darkMode: 'class' };
+<section id="services" class="py-20 px-6 bg-zinc-900">
+  <div class="max-w-5xl mx-auto"><h2 class="text-5xl font-bold text-center mb-16">Services</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-zinc-800 p-10 rounded-3xl"><h3 class="text-3xl">Web Design</h3><p class="mt-6 text-zinc-400">Modern, fast websites</p></div>
+    <div class="bg-zinc-800 p-10 rounded-3xl"><h3 class="text-3xl">Branding</h3><p class="mt-6 text-zinc-400">Logos & visual identity</p></div>
+    <div class="bg-zinc-800 p-10 rounded-3xl"><h3 class="text-3xl">UI/UX</h3><p class="mt-6 text-zinc-400">User-focused interfaces</p></div>
+  </div></div>
+</section>
 
-        const config = {
-            name: "Hunter Newbold",
-            bio: "Web Designer at Contentia Creative",
-            avatar: "https://i.imgur.com/g5DtDK7.jpg",
-            links: [
-                { title: "Contentia Creative — Home", url: "https://contentiacreative.com", icon: "🏠" },
-                { title: "Services", url: "https://contentiacreative.com/services", icon: "🛠️" },
-                { title: "Portfolio", url: "https://contentiacreative.com/portfolio", icon: "📂" },
-                { title: "Contact Form (Jotform)", url: "https://form.jotform.com/YOUR_JOTFORM_ID", icon: "✉️" }
-            ]
-        };
+<section class="py-20 px-6 bg-zinc-900">
+  <div class="max-w-4xl mx-auto text-center"><h2 class="text-5xl font-bold mb-16">Testimonials</h2>
+  <div class="space-y-12"><p class="text-xl">"Hunter delivered in 10 days. Best decision." – Client 1</p><p class="text-xl">"Our conversions doubled." – Client 2</p><p class="text-xl">"Stunning design, flawless code." – Client 3</p></div></div>
+</section>
 
-        function renderLinks() {
-            const container = document.getElementById('links');
-            container.innerHTML = config.links.map(link => `
-                <a href="${link.url}" target="_blank" 
-                   class="link-btn group flex items-center justify-center gap-4 bg-zinc-100 hover:bg-zinc-200 dark:bg-white/10 dark:hover:bg-white/20 border border-zinc-200 dark:border-white/10 rounded-3xl px-8 py-7 text-[21px] font-medium w-full">
-                    <span class="text-4xl opacity-90">${link.icon}</span>
-                    <span>${link.title}</span>
-                </a>
-            `).join('');
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
-
-        window.onload = () => {
-            document.getElementById('name').textContent = config.name;
-            document.getElementById('bio').textContent = config.bio;
-            document.getElementById('avatar').src = config.avatar;
-            renderLinks();
-
-            if (localStorage.getItem('theme') === 'light') {
-                document.documentElement.classList.remove('dark');
-                document.getElementById('theme-btn').textContent = '☀️';
-            }
-        };
-    </script>
+<footer class="py-12 text-center text-zinc-500 border-t border-zinc-800">© 2026 Hunter Newbold</footer>
 </body>
 </html>
